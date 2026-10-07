@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07111f">
+  <meta name="description" content="A clean, interactive Caesar Cipher encryption and decryption tool for learning the basics of cryptography.">
+  <title>SecureText — Basic Encryption &amp; Decryption</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="SecureText home">
+        <span class="brand-mark" aria-hidden="true">S<span>.</span></span>
+        <span>Secure<span class="brand-accent">Text</span></span>
+      </a>
+      <div class="header-status">
+        <span class="status-light" aria-hidden="true"></span>
+        LOCAL &amp; PRIVATE
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <div class="eyebrow"><span class="eyebrow-line"></span> CRYPTOGRAPHY · 001</div>
+        <h1 id="page-title">🔐 SecureText</h1>
+        <p class="hero-subtitle">Basic Encryption &amp; Decryption</p>
+        <p class="hero-copy">A simple, hands-on introduction to secret messages.<br class="desktop-break"> Shift the alphabet and see cryptography in action.</p>
+      </section>
+
+      <section class="tool-card" aria-label="Caesar Cipher tool">
+        <div class="card-topline">
+          <div class="tool-label"><span class="tool-label-dot" aria-hidden="true"></span> CIPHER WORKSPACE</div>
+          <div class="algorithm-tag"><span aria-hidden="true">⌘</span> CAESAR CIPHER</div>
+        </div>
+
+        <div class="field-group">
+          <div class="field-heading">
+            <label for="inputText">Enter Your Text</label>
+            <span class="character-count"><span id="characterCount">0</span> characters</span>
+          </div>
+          <textarea id="inputText" rows="5" placeholder="Enter text here..." spellcheck="false" aria-describedby="inputHint"></textarea>
+          <span id="inputHint" class="sr-only">Enter the text you want to encrypt or decrypt.</span>
+        </div>
+
+        <div class="key-row">
+          <div class="key-field">
+            <label for="encryptionKey">🔑 Encryption Key</label>
+            <input id="encryptionKey" type="number" step="1" value="3" inputmode="numeric">
+          </div>
+          <p class="key-help">The key determines how many positions each letter is shifted.</p>
+        </div>
+
+        <div class="action-row">
+          <button class="button button-encrypt" id="encryptButton" type="button">
+            <span aria-hidden="true">🔒</span> Encrypt
+          </button>
+          <button class="button button-decrypt" id="decryptButton" type="button">
+            <span aria-hidden="true">🔓</span> Decrypt
+          </button>
+        </div>
+
+        <div class="result-heading">
+          <label for="resultText">Result</label>
+          <div class="result-status" aria-live="polite">
+            <span class="status-light status-light-muted" id="resultStatusDot" aria-hidden="true"></span>
+            <span id="resultStatus">Ready</span>
+          </div>
+        </div>
+        <textarea id="resultText" rows="5" placeholder="Your result will appear here..." readonly aria-label="Encryption or decryption result"></textarea>
+
+        <div class="utility-row">
+          <button class="button button-copy" id="copyButton" type="button"><span aria-hidden="true">📋</span> Copy Result</button>
+          <button class="button button-clear" id="clearButton" type="button"><span aria-hidden="true">🗑️</span> Clear</button>
+        </div>
+        <div id="message" class="message" role="status" aria-live="polite"></div>
+      </section>
+
+      <section class="info-card" aria-labelledby="info-title">
+        <div class="info-icon" aria-hidden="true">i</div>
+        <div class="info-content">
+          <div class="eyebrow info-eyebrow">THE BASICS</div>
+          <h2 id="info-title">How Does Caesar Cipher Work?</h2>
+          <p class="info-description">The Caesar Cipher is a basic substitution cipher where each letter is shifted by a fixed number of positions in the alphabet.</p>
+          <div class="example" aria-label="Example: HELLO shifted by a key of 3 becomes KHOOR">
+            <div class="example-item"><span>ORIGINAL</span><strong>HELLO</strong></div>
+            <span class="example-arrow" aria-hidden="true">→</span>
+            <div class="example-item"><span>KEY</span><strong>+3</strong></div>
+            <span class="example-arrow" aria-hidden="true">→</span>
+            <div class="example-item example-output"><span>ENCRYPTED</span><strong>KHOOR</strong></div>
+          </div>
+          <p class="warning"><span aria-hidden="true">⚠️</span> Caesar Cipher is an educational encryption method and should not be used to protect real passwords or sensitive information.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Copyright © 2026 Maheshuni Prudvitha. All rights reserved.</span>
+      <span class="footer-note"><span class="status-light" aria-hidden="true"></span> NO DATA LEAVES THIS DEVICE</span>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
